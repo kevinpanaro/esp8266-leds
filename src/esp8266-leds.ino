@@ -8,9 +8,10 @@
 const char* SSID = "SFR-b118";
 const char* PASSWORD = "V6AW5I2E1S2M";
 const int PORT = 80;
-const int NETWORK_LED_PIN = D2;
 const int LED_STRIP_NB_LEDS = 300;
 const int LED_STRIP_DATA_PIN = D1;
+const int NETWORK_LED_PIN = D2;
+const int SERVER_ON_LED_PIN = D3;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(LED_STRIP_NB_LEDS, LED_STRIP_DATA_PIN, NEO_GRB + NEO_KHZ800);
 
@@ -124,12 +125,15 @@ void startServer(){
   Serial.println(SSID);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
+  digitalWrite(SERVER_ON_LED_PIN, 1);
 }
 
 void setup(void) {
-  pinMode(NETWORK_LED_PIN, OUTPUT);
   pinMode(LED_STRIP_DATA_PIN, OUTPUT);
+  pinMode(NETWORK_LED_PIN, OUTPUT);
+  pinMode(SERVER_ON_LED_PIN, OUTPUT);
   digitalWrite(NETWORK_LED_PIN, 0);
+  digitalWrite(SERVER_ON_LED_PIN, 0);
   Serial.begin(115200);
 
   strip.begin();
