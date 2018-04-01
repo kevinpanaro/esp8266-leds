@@ -1,13 +1,13 @@
-ESP8266 controlled LED strip
+ESP8266 controlled LED strip [![Build Status](https://travis-ci.org/saponace/esp8266-leds.svg?branch=master)](https://travis-ci.org/saponace/esp8266-leds)
 
 # Build
 First, make sure you have platformio installed on your system. You can install platformio with
 ```
-# pip install -U platformio 
+# pip install -U platformio
 ```
-Then: 
+Then:
 ```
-$ make 
+$ make
 ```
 # Upload code to the microcontroller
 ```
